@@ -10,6 +10,8 @@ if not event.is_full():
     event.add_person(person)
 """
 
+from ADTs.person import Person
+
 
 class Event:
     """A simple class that wraps an event's information and supports
@@ -17,9 +19,9 @@ class Event:
     """
 
     def __init__(self, name: str, size_limit: int) -> None:
-        self.name = name
+        self.name: str = name
         "The event's name."
-        self.size_limit = size_limit
+        self.size_limit: int = size_limit
         "The occupancy limit for the event."
-        self.__attendees = []
+        self.__attendees: list[Person] = []
         return
