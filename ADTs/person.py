@@ -11,3 +11,12 @@ person = Person(name="John Doe",
                 choices=["choice1", "choice2", "choice3"])
 """
 
+class Person:
+    """A simple class that wraps a person's information."""
+    
+    def __init__(self, name: str, id: str, choices: list[str], top_choice: str) -> None:
+        self.name = name
+        self.id = id
+        self.choices = choices
+        self.top_choice = top_choice
+        return
