@@ -20,3 +20,10 @@ class Person:
         self.choices = choices
         self.top_choice = top_choice
         return
+    
+def main() -> None:
+    """Unit Testing"""
+    return
+
+if __name__ == "__main__":
+    main()
