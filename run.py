@@ -27,6 +27,9 @@ def main() -> None:
             if not choice_event.is_full():
                 choice_event.add_person(person)
 
+    for event in event_map.values():
+        print(event.name, event.get_roster())
+
     return
 
 
