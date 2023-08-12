@@ -28,6 +28,11 @@ class Event:
         return
 
     def is_full(self) -> bool:
+        """Returns whether the event is full.
+
+        Returns:
+            bool: Whether the event is full.
+        """
         if len(self.__attendees) > self.size_limit:
             print("Error: More event attendees than permitted.")
             return True
