@@ -21,6 +21,9 @@ class Person:
         self.top_choice = top_choice
         return
     
+    def __str__(self) -> str:
+        return f"Name: {self.name}; ID: {self.id}"
+    
 def main() -> None:
     """Unit Testing"""
     return
