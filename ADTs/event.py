@@ -27,6 +27,18 @@ class Event:
         "The current event attendees."
         return
 
+    def add_person(self, person: Person) -> bool:
+        """Adds a person to the event roster.
+
+        Args:
+            person (Person): Person to add to roster.
+
+        Returns:
+            bool: Whether person was successfully added to event.
+        """
+
+        return False
+
     def is_full(self) -> bool:
         """Returns whether the event is full.
 
