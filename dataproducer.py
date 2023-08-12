@@ -11,10 +11,10 @@ def get_event_map() -> dict[str, Event]:
     """
 
     mapping = {
-        "Gathering 1": Event(name="Gathering 1", capacity="2"),
-        "Gathering 2": Event(name="Gathering 2", capacity="3"),
-        "Gathering 3": Event(name="Gathering 3", capacity="2"),
-        "Gathering 4": Event(name="Gathering 4", capacity="3"),
+        "Gathering 1": Event(name="Gathering 1", capacity=2),
+        "Gathering 2": Event(name="Gathering 2", capacity=3),
+        "Gathering 3": Event(name="Gathering 3", capacity=2),
+        "Gathering 4": Event(name="Gathering 4", capacity=3),
     }
 
     return mapping
