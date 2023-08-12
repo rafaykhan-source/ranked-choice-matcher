@@ -28,4 +28,13 @@ def get_people() -> list[Person]:
     """
     people = []
 
+    people.append(
+        Person(
+            name="John Doe",
+            id="jd0000",
+            choices=["Gathering 1", "Gathering 2"],
+            top_choice="Gathering 1",
+        )
+    )
+
     return people
