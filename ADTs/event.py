@@ -24,4 +24,5 @@ class Event:
         self.size_limit: int = size_limit
         "The occupancy limit for the event."
         self.__attendees: list[Person] = []
+        "The current event attendees."
         return
