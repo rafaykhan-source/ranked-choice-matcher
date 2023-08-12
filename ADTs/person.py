@@ -16,13 +16,13 @@ class Person:
     """A simple class that wraps a person's information."""
 
     def __init__(self, name: str, id: str, choices: list[str], top_choice: str) -> None:
-        self.name = name
+        self.name: str = name
         "The person's name."
-        self.id = id
+        self.id: int = id
         "The person's unique identifier."
-        self.choices = choices
+        self.choices: list[str] = choices
         "The person's event choices' names."
-        self.top_choice = top_choice
+        self.top_choice: str = top_choice
         "The person's top_choice event name."
         return
 
