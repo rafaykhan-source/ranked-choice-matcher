@@ -27,11 +27,18 @@ class Person:
         return
 
     def __str__(self) -> str:
-        return f"Name: {self.name}; ID: {self.id}"
+        return f"Name: {self.name}; ID: {self.id}; Choices: {self.choices}; Top Choice: {self.top_choice}"
 
 
 def main() -> None:
     """Unit Testing"""
+    person = Person(
+        name="John Doe",
+        id="jd0000",
+        choices=["Gathering 1", "Gathering 2"],
+        top_choice="Gathering 1",
+    )
+    print(person)
     return
 
 
