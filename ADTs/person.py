@@ -17,9 +17,13 @@ class Person:
 
     def __init__(self, name: str, id: str, choices: list[str], top_choice: str) -> None:
         self.name = name
+        "The person's name."
         self.id = id
+        "The person's unique identifier."
         self.choices = choices
+        "The person's event choices' names."
         self.top_choice = top_choice
+        "The person's top_choice event name."
         return
 
     def __str__(self) -> str:
