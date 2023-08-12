@@ -55,3 +55,17 @@ class Event:
             return True
 
         return len(self.__roster) == self.capacity
+
+    def __str__(self) -> str:
+        return f"Name: {self.name}; Capacity: {self.capacity}; Roster: {self.__roster}"
+
+
+def main() -> None:
+    """Unit Testing."""
+    event = Event(name="Gathering 1", capacity="2")
+    print(event)
+    return
+
+
+if __name__ == "__main__":
+    main()
