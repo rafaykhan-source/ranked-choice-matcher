@@ -11,6 +11,7 @@ if not event.is_full():
 """
 
 from ADTs.person import Person
+from copy import deepcopy
 
 
 class Event:
@@ -55,6 +56,14 @@ class Event:
             return True
 
         return len(self.__roster) == self.capacity
+
+    def get_roster(self) -> list[Person]:
+        """Returns the event roster.
+
+        Returns:
+            list[Person]: The event's roster.
+        """
+        return deepcopy(self.__roster)
 
     def __str__(self) -> str:
         return f"Name: {self.name}; Capacity: {self.capacity}; Roster: {self.__roster}"
