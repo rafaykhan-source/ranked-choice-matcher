@@ -36,8 +36,13 @@ class Event:
         Returns:
             bool: Whether person was successfully added to event.
         """
+        if self.is_full():
+            print("Error: Person cannot be added to event with full roster. ")
+            return False
 
-        return False
+        self.__roster.append(person)
+
+        return True
 
     def is_full(self) -> bool:
         """Returns whether the event is full.
