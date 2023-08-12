@@ -6,27 +6,30 @@ ranked choices and supports operations.
 
 Typical usage example:
 
-person = Person(name="John Doe", 
-                id="jd0000", 
+person = Person(name="John Doe",
+                id="jd0000",
                 choices=["choice1", "choice2", "choice3"])
 """
 
+
 class Person:
     """A simple class that wraps a person's information."""
-    
+
     def __init__(self, name: str, id: str, choices: list[str], top_choice: str) -> None:
         self.name = name
         self.id = id
         self.choices = choices
         self.top_choice = top_choice
         return
-    
+
     def __str__(self) -> str:
         return f"Name: {self.name}; ID: {self.id}"
-    
+
+
 def main() -> None:
     """Unit Testing"""
     return
+
 
 if __name__ == "__main__":
     main()
