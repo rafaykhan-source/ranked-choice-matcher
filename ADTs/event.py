@@ -23,8 +23,8 @@ class Event:
         "The event's name."
         self.size_limit: int = size_limit
         "The occupancy limit for the event."
-        self.__attendees: list[Person] = []
-        "The current event attendees."
+        self.__roster: list[Person] = []
+        "The current event roster."
         return
 
     def add_person(self, person: Person) -> bool:
@@ -45,7 +45,8 @@ class Event:
         Returns:
             bool: Whether the event is full.
         """
-        if len(self.__attendees) > self.size_limit:
-            print("Error: More event attendees than permitted.")
+        if len(self.__roster) > self.size_limit:
+            print("Error: Event size limit has been exceed.")
             return True
-        return len(self.__attendees) == self.size_limit
+
+        return len(self.__roster) == self.size_limit
