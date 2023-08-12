@@ -5,7 +5,7 @@ and supports operations typically associated with a real-life event.
 
 Typical usage example:
 
-event = Event(name="Community Gathering", size_limit=15)
+event = Event(name="Community Gathering", capacity=15)
 if not event.is_full():
     event.add_person(person)
 """
@@ -18,10 +18,10 @@ class Event:
     event-related operations.
     """
 
-    def __init__(self, name: str, size_limit: int) -> None:
+    def __init__(self, name: str, capacity: int) -> None:
         self.name: str = name
         "The event's name."
-        self.size_limit: int = size_limit
+        self.capacity: int = capacity
         "The occupancy limit for the event."
         self.__roster: list[Person] = []
         "The current event roster."
@@ -50,8 +50,8 @@ class Event:
         Returns:
             bool: Whether the event is full.
         """
-        if len(self.__roster) > self.size_limit:
-            print("Error: Event size limit has been exceed.")
+        if len(self.__roster) > self.capacity:
+            print("Error: Event capacity has been exceed.")
             return True
 
-        return len(self.__roster) == self.size_limit
+        return len(self.__roster) == self.capacity
