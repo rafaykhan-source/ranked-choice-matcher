@@ -15,7 +15,7 @@ from copy import deepcopy
 
 
 class Event:
-    """A simple class that wraps an event's information and supports
+    """A class wrapping an event's information and supporting
     event-related operations.
     """
 

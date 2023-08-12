@@ -13,7 +13,7 @@ person = Person(name="John Doe",
 
 
 class Person:
-    """A simple class that wraps a person's information."""
+    """A class wrapping a person's information."""
 
     def __init__(self, name: str, id: str, choices: list[str], top_choice: str) -> None:
         self.name: str = name
