@@ -26,3 +26,9 @@ class Event:
         self.__attendees: list[Person] = []
         "The current event attendees."
         return
+
+    def is_full(self) -> bool:
+        if len(self.__attendees) > self.size_limit:
+            print("Error: More event attendees than permitted.")
+            return True
+        return len(self.__attendees) == self.size_limit
