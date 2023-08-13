@@ -11,9 +11,9 @@ def get_event_map() -> dict[str, Event]:
     """
 
     mapping = {
-        "Gathering 1": Event(name="Gathering 1", capacity=2),
-        "Gathering 2": Event(name="Gathering 2", capacity=3),
-        "Gathering 3": Event(name="Gathering 3", capacity=2),
+        "Gathering 1": Event(name="Gathering 1", capacity=1),
+        "Gathering 2": Event(name="Gathering 2", capacity=0),
+        "Gathering 3": Event(name="Gathering 3", capacity=0),
         "Gathering 4": Event(name="Gathering 4", capacity=3),
     }
 
@@ -26,15 +26,19 @@ def get_people() -> list[Person]:
     Returns:
         list[Person]: people who must be listed on an event.
     """
-    people = []
-
-    people.append(
+    people = [
         Person(
             name="John Doe",
             id="jd0000",
             choices=["Gathering 1", "Gathering 2"],
             top_choice="Gathering 1",
-        )
-    )
+        ),
+        Person(
+            name="Jane Doe",
+            id="jd0000",
+            choices=["Gathering 1", "Gathering 3"],
+            top_choice="Gathering 1",
+        ),
+    ]
 
     return people
