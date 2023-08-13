@@ -42,11 +42,14 @@ def main() -> None:
                 option_event.add_person(person)
                 break
 
-        # Print resulting assignments
-        for option_event in options:
-            print(option_event.name, option_event.get_roster())
+    # Print resulting assignments
+    for option_event in options:
+        names = []
+        for person in option_event.get_roster():
+            names.append(person.name)
+        print(option_event.name, names)
 
-        return
+    return
 
 
 if __name__ == "__main__":
