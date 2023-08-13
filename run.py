@@ -5,9 +5,11 @@ import dataproducer as dp
 
 def main() -> None:
     event_map = dp.get_event_map()
+    options = list(event_map.values())  # all the events
     people = dp.get_people()
 
     for person in people:
+        # Try to place person in their top choice
         if person.top_choice not in event_map:
             print(f"Error: Person's top choice not in event map - {person.top_choice}")
             break
@@ -17,6 +19,8 @@ def main() -> None:
             top_choice_event.add_person(person)
             continue
 
+        # Try to place person in one of their preferred choices
+        placed = False
         choices = person.choices
         for choice in choices:
             if choice not in event_map:
@@ -26,11 +30,23 @@ def main() -> None:
             choice_event = event_map[choice]
             if not choice_event.is_full():
                 choice_event.add_person(person)
+                placed = True
+                break
 
-    for event in event_map.values():
-        print(event.name, event.get_roster())
+        if placed:
+            continue
 
-    return
+        # Place person in one of the available options
+        for option_event in options:
+            if not option_event.is_full():
+                option_event.add_person(person)
+                break
+        
+        # Print resulting assignments
+        for option_event in options:
+            print(option_event.name, option_event.get_roster())
+
+        return
 
 
 if __name__ == "__main__":
