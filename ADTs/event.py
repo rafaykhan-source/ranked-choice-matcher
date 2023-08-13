@@ -58,7 +58,15 @@ class Event:
         return len(self.__roster) == self.capacity
 
     def get_roster(self) -> list[Person]:
-        """Returns the event roster.
+        """Returns a shallow copy of the event roster.
+
+        Returns:
+            list[Person]: The event's roster.
+        """
+        return self.__roster.copy()
+
+    def get_roster_deep(self) -> list[Person]:
+        """Returns a deep copy of the event roster.
 
         Returns:
             list[Person]: The event's roster.
