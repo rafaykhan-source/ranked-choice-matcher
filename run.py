@@ -1,6 +1,7 @@
 """This module is responsible for running the ranked-choice assignment script."""
 
 import dataproducer as dp
+import metrics
 
 
 def main() -> None:
@@ -48,6 +49,8 @@ def main() -> None:
         for person in option_event.get_roster():
             names.append(person.name)
         print(option_event.name, names)
+
+    print(metrics.get_satisfaction_percentage(people, event_map))
 
     return
 
