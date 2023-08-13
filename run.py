@@ -41,7 +41,7 @@ def main() -> None:
             if not option_event.is_full():
                 option_event.add_person(person)
                 break
-        
+
         # Print resulting assignments
         for option_event in options:
             print(option_event.name, option_event.get_roster())
