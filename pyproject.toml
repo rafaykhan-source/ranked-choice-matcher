@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ranked_choice_assigner"
-version = "0.0.1"
+version = "0.0.11"
 authors = [{ name = "Rafay Khan" }]
 maintainers = [{ name = "Rafay Khan" }]
 description = "An algorithm/automation program for assigning people to (simultaneous) events based on ranked preferences."
