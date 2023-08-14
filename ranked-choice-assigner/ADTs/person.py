@@ -27,7 +27,8 @@ class Person:
         return
 
     def __str__(self) -> str:
-        return f"Name: {self.name}; ID: {self.id}; Choices: {self.choices}; Top Choice: {self.top_choice}"
+        return f"""Name: {self.name}; ID: {self.id}; 
+Choices: {self.choices}; Top Choice: {self.top_choice}"""
 
 
 def main() -> None:
