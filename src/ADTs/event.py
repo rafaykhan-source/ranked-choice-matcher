@@ -74,6 +74,11 @@ class Event:
         return deepcopy(self.__roster)
 
     def __str__(self) -> str:
+        """Returns string representation of the event.
+
+        Returns:
+            str: Event's information.
+        """
         return f"Name: {self.name}; Capacity: {self.capacity}; Roster: {self.__roster}"
 
 
