@@ -35,6 +35,11 @@ class Person:
         return
 
     def __str__(self) -> str:
+        """Returns a string representation of the person.
+
+        Returns:
+            str: Person's information.
+        """
         return f"""Name: {self.name}; ID: {self.id}; 
 Choices: {self.choices}; Top Choice: {self.top_choice}"""
 
