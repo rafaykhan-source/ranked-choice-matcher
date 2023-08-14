@@ -9,7 +9,6 @@ def get_event_map() -> dict[str, Event]:
     Returns:
         dict[str, Event]: event map
     """
-
     mapping = {
         "Gathering 1": Event(name="Gathering 1", capacity=1),
         "Gathering 2": Event(name="Gathering 2", capacity=0),
