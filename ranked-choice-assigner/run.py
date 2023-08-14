@@ -1,7 +1,7 @@
 """This module is responsible for running the ranked-choice assignment script."""
 
 import dataproducer as dp
-import metrics
+import src.metrics as metrics
 
 
 def main() -> None:
