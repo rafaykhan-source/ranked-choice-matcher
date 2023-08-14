@@ -2,4 +2,4 @@
 .vscode
 data
 build
-ranked-choice-assigner/*.egg-info
+*.egg-info
