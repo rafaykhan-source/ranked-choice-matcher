@@ -20,6 +20,12 @@ class Event:
     """
 
     def __init__(self, name: str, capacity: int) -> None:
+        """Instantiates an event.
+
+        Args:
+            name (str): Name of the event.
+            capacity (int): Event's size limit.
+        """
         self.name: str = name
         "The event's name."
         self.capacity: int = capacity
