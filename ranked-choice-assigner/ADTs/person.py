@@ -16,6 +16,14 @@ class Person:
     """A class wrapping a person's information."""
 
     def __init__(self, name: str, id: str, choices: list[str], top_choice: str) -> None:
+        """Instantiates the person class.
+
+        Args:
+            name (str): Person's name.
+            id (str): Person's unique id.
+            choices (list[str]): Person's event choices.
+            top_choice (str): Person's top event choice.
+        """
         self.name: str = name
         "The person's name."
         self.id: int = id
@@ -27,11 +35,17 @@ class Person:
         return
 
     def __str__(self) -> str:
-        return f"Name: {self.name}; ID: {self.id}; Choices: {self.choices}; Top Choice: {self.top_choice}"
+        """Returns a string representation of the person.
+
+        Returns:
+            str: Person's information.
+        """
+        return f"""Name: {self.name}; ID: {self.id}; 
+Choices: {self.choices}; Top Choice: {self.top_choice}"""
 
 
 def main() -> None:
-    """Unit Testing"""
+    """Unit Testing."""
     person = Person(
         name="John Doe",
         id="jd0000",

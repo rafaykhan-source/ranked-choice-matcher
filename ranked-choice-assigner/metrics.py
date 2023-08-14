@@ -1,5 +1,8 @@
-"""This module contains various metrics/evaluation functions for
-for assignment script."""
+"""This module contains various metrics/evaluation functions for the assignment script.
+
+The module's metric include high satisfaction percentage and general
+satisfaction percentage.
+"""
 
 from ADTs import Event, Person
 
@@ -15,7 +18,7 @@ def get_satisfaction_percentage(
 
     Args:
         people (list[Person]): People assigned events.
-        events (dict[str, Event]): event_map with events after assignment.
+        event_map (dict[str, Event]): event_map with events after assignment.
 
     Returns:
         str: The satisfaction metric.

@@ -15,11 +15,20 @@ from copy import deepcopy
 
 
 class Event:
-    """A class wrapping an event's information and supporting
-    event-related operations.
+    """A class wrapping an event's information and containing event-related operations.
+
+    Attributes:
+        name (str): The event's name.
+        capacity (int): The event's size limit.
     """
 
     def __init__(self, name: str, capacity: int) -> None:
+        """Instantiates an event.
+
+        Args:
+            name (str): Name of the event.
+            capacity (int): Event's size limit.
+        """
         self.name: str = name
         "The event's name."
         self.capacity: int = capacity
@@ -74,6 +83,11 @@ class Event:
         return deepcopy(self.__roster)
 
     def __str__(self) -> str:
+        """Returns string representation of the event.
+
+        Returns:
+            str: Event's information.
+        """
         return f"Name: {self.name}; Capacity: {self.capacity}; Roster: {self.__roster}"
 
 
