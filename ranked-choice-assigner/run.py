@@ -6,9 +6,9 @@ import metrics
 
 def main() -> None:
     """Runs the assignment script."""
-    event_map = dp.get_event_map()
+    event_map = dp.get_event_map("")
     options = list(event_map.values())  # all the events
-    people = dp.get_people()
+    people = dp.get_people("")
 
     for person in people:
         # Try to place person in their top choice
