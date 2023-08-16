@@ -30,7 +30,7 @@ def get_satisfaction_percentage(
         if person in goal_roster:
             top_choice_count += 1
 
-    return f"Satisfaction Rating: {(top_choice_count/len(people))*100}"
+    return f"Satisfaction Rating: {((top_choice_count/len(people))*100):.2f}"
 
 
 def get_general_satisfaction_percentage(
@@ -58,4 +58,4 @@ def get_general_satisfaction_percentage(
                 choice_count += 1
                 break
 
-    return f"General Satisfaction Rating: {(choice_count/len(people))*100}"
+    return f"General Satisfaction Rating: {((choice_count/len(people))*100):.2f}"
