@@ -49,9 +49,10 @@ def main() -> None:
         names = []
         for person in option_event.get_roster():
             names.append(person.name)
-        print(option_event.name, names)
+        print(f"{option_event.name}: {names}\n")
 
     print(metrics.get_satisfaction_percentage(people, event_map))
+    print(metrics.get_general_satisfaction_percentage(people, event_map))
 
     return
 
