@@ -77,3 +77,12 @@ def write_results(csv_name: str, event_map: dict[str, Event]) -> None:
     df = pd.DataFrame.from_dict(results, orient="index")
     df.to_csv(f"ranked-choice-assigner/results/{csv_name}_assignments.csv")
     return
+
+
+def main() -> None:
+    """Unit Testing."""
+    return
+
+
+if __name__ == "__main__":
+    main()
