@@ -4,6 +4,7 @@ The module's metric include high satisfaction percentage and general
 satisfaction percentage.
 """
 
+import pandas as pd
 from ADTs import Event, Person
 
 
@@ -59,3 +60,20 @@ def get_general_satisfaction_percentage(
                 break
 
     return f"General Satisfaction Rating: {((choice_count/len(people))*100):.2f}"
+
+
+def write_results(csv_name: str, event_map: dict[str, Event]) -> None:
+    """Writes the resulting assignments to a csv file.
+
+    Args:
+        csv_name (str): Name of csv.
+        event_map (dict[str, Event]): Events
+    """
+    results = {}
+    for event_name, event in event_map.items():
+        roster = event.get_roster()
+        people = [f"{person.name};{person.id}" for person in roster]
+        results[event_name] = people
+    df = pd.DataFrame.from_dict(results, orient="index")
+    df.to_csv(f"ranked-choice-assigner/results/{csv_name}_assignments.csv")
+    return
