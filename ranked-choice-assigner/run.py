@@ -6,9 +6,9 @@ import metrics
 
 def main() -> None:
     """Runs the assignment script."""
-    event_map = dp.get_event_map("")
+    event_map = dp.get_event_map("wellness")
     options = list(event_map.values())  # all the events
-    people = dp.get_people("")
+    people = dp.get_people("wellness")
 
     for person in people:
         # Try to place person in their top choice
@@ -49,11 +49,12 @@ def main() -> None:
         names = []
         for person in option_event.get_roster():
             names.append(person.name)
-        print(f"{option_event.name}: {names}\n")
+        print(f"{option_event.name}: {names}")
+        print("------------------------")
 
     print(metrics.get_satisfaction_percentage(people, event_map))
     print(metrics.get_general_satisfaction_percentage(people, event_map))
-
+    metrics.write_results("wellness", event_map)
     return
 
 
