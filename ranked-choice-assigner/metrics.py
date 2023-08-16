@@ -31,3 +31,31 @@ def get_satisfaction_percentage(
             top_choice_count += 1
 
     return f"Satisfaction Rating: {(top_choice_count/len(people))*100}"
+
+
+def get_general_satisfaction_percentage(
+    people: list[Person], event_map: dict[str, Event]
+) -> str:
+    """Returns the general satisfaction percentage.
+
+    The general satisfaction percentage is defined as the number of
+    people that received their one of their choice divided by the total
+    number of people.
+
+    Args:
+        people (list[Person]): People assigned events.
+        event_map (dict[str, Event]): event_map with events after assignment.
+
+    Returns:
+        str: The general satisfaction metric.
+    """
+    choice_count = 0
+
+    for person in people:
+        for choice in person.choices:
+            roster = event_map[choice].get_roster()
+            if person in roster:
+                choice_count += 1
+                break
+
+    return f"General Satisfaction Rating: {(choice_count/len(people))*100}"
