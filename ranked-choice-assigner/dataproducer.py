@@ -61,9 +61,8 @@ def get_people(group_type: str) -> list[Person]:
         data = __load_data("wellness.csv")
     else:
         data = __load_data("community.csv")
-    people = list(map(__create_person, data.values.tolist()))
 
-    return people
+    return list(map(__create_person, data.values.tolist()))
 
 
 def main() -> None:
