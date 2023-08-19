@@ -22,7 +22,6 @@ development = [
 ]
 
 [tool.ruff]
-include = ["**.py", "**/pyproject.toml", "datapipelines/*.ipynb"]
 # Adjust line-length to match black formatter
 line-length = 88
 select = [
@@ -31,6 +30,7 @@ select = [
     "E",  # pycodestyle
     "W", # pycodestyle
     "F",  # pyflakes
+    "FBT", # flake8-boolean-trap
     "B", # flake8-bugbear
     "UP", # pyupgrade
     "D",  # pydocstyle
