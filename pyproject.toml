@@ -10,37 +10,36 @@ maintainers = [{ name = "Rafay Khan" }]
 description = "An algorithm/automation program for assigning people to (simultaneous) events based on ranked preferences."
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = [
-    "pyyaml",
-]
+dependencies = ["pyyaml"]
 
 [project.optional-dependencies]
-development = [
-    "black", 
-    "ruff", 
-    "pytype",
-]
+development = ["black", "ruff", "pytype"]
 
 [tool.ruff]
 # Adjust line-length to match black formatter
 line-length = 88
 select = [
-    "A", # flake8-builtins
+    "A",   # flake8-builtins
+    "BLE", # flake8-blind-except
+    "C4",  # flake8-comprehensions
     "C90", # mccabe
-    "E",  # pycodestyle
-    "W", # pycodestyle
-    "F",  # pyflakes
+    "COM", # flake8-commas
+    "E",   # pycodestyle
+    "EM",  # flake8-errmsg
+    "W",   # pycodestyle
+    "F",   # pyflakes
     "FBT", # flake8-boolean-trap
-    "B", # flake8-bugbear
-    "UP", # pyupgrade
-    "D",  # pydocstyle
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+    "D",   # pydocstyle
     "ANN", # flake8-annotations
-    "Q", # flake8-quotes
-    "I", # isort
-    "N", # pep8-naming
+    "Q",   # flake8-quotes
+    "RET", # flake8-return
+    "I",   # isort
+    "N",   # pep8-naming
 ]
 
-ignore = ["ANN101"]
+ignore = ["ANN101", "COM819"]
 
 [tool.ruff.pydocstyle]
 convention = "google"
