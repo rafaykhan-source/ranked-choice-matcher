@@ -22,15 +22,17 @@ development = [
 ]
 
 [tool.ruff]
-include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
+include = ["**.py", "*.pyi", "**/pyproject.toml", "datapipelines/*.ipynb"]
 line-length = 88
 select = [
     "E",  # pycodestyle
+    "W", # pycodestyle
     "F",  # pyflakes
     "B", # flake8-bugbear
     "UP", # pyupgrade
     "D",  # pydocstyle
     "I", # isort
+    "N", # pep8-naming
 ]
 
 [tool.ruff.pydocstyle]
