@@ -8,13 +8,13 @@ import pandas as pd
 from ADTs import Event, Person
 
 
-def get_satisfaction_percentage(
+def get_high_satisfaction_percentage(
     people: list[Person],
     event_map: dict[str, Event],
 ) -> str:
-    """Returns the satisfaction percentage.
+    """Returns the high satisfaction percentage.
 
-    The satisfaction percentage is defined as the number of
+    The high satisfaction percentage is defined as the number of
     people that received their top choice divided by the total
     number of people.
 
@@ -23,7 +23,7 @@ def get_satisfaction_percentage(
         event_map (dict[str, Event]): event_map with events after assignment.
 
     Returns:
-        str: The satisfaction metric.
+        str: The high satisfaction metric.
     """
     top_choice_count = 0
 
@@ -32,7 +32,7 @@ def get_satisfaction_percentage(
         if person in goal_roster:
             top_choice_count += 1
 
-    return f"Satisfaction Rating: {((top_choice_count/len(people))*100):.2f}"
+    return f"High Satisfaction Rating: {((top_choice_count/len(people))*100):.2f}"
 
 
 def get_general_satisfaction_percentage(

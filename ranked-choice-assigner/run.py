@@ -52,7 +52,7 @@ def main() -> None:
         print(f"{option_event.name}: {names}")
         print("------------------------")
 
-    print(metrics.get_satisfaction_percentage(people, event_map))
+    print(metrics.get_high_satisfaction_percentage(people, event_map))
     print(metrics.get_general_satisfaction_percentage(people, event_map))
     metrics.write_results("wellness", event_map)
     return
