@@ -1,4 +1,9 @@
-"""This module represents the data producer for the project."""
+"""This module represents the data producer for the project.
+
+It is responsible for loading data pertaining to the
+ranked-choice assignment task and mapping this data to
+custom ADTs.
+"""
 
 import pandas as pd
 from ADTs import Event, Person
