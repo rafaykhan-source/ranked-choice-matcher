@@ -27,6 +27,7 @@ line-length = 88
 select = [
     "E",  # pycodestyle
     "F",  # pyflakes
+    "B", # flake8-bugbear
     "UP", # pyupgrade
     "D",  # pydocstyle
     "I", # isort
