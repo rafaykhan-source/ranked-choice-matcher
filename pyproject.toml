@@ -31,9 +31,12 @@ select = [
     "B", # flake8-bugbear
     "UP", # pyupgrade
     "D",  # pydocstyle
+    "ANN", # flake8-annotations
     "I", # isort
     "N", # pep8-naming
 ]
+
+ignore = ["ANN101"]
 
 [tool.ruff.pydocstyle]
 convention = "google"
