@@ -22,6 +22,7 @@ development = [
 ]
 
 [tool.ruff]
+include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
 line-length = 88
 select = [
     "E",  # pycodestyle
