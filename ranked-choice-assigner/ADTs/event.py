@@ -10,8 +10,9 @@ if not event.is_full():
     event.add_person(person)
 """
 
-from ADTs.person import Person
 from copy import deepcopy
+
+from ADTs.person import Person
 
 
 class Event:
