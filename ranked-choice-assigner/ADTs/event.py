@@ -1,7 +1,7 @@
 """This module represents the Event Abstract Datatype (ADT).
 
-Provided an event's information, the class wraps the information
-and supports operations typically associated with a real-life event.
+This class wraps the information and supports operations
+associated with a real-life event.
 
 Typical usage example:
 
