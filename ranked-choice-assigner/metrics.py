@@ -9,7 +9,8 @@ from ADTs import Event, Person
 
 
 def get_satisfaction_percentage(
-    people: list[Person], event_map: dict[str, Event]
+    people: list[Person],
+    event_map: dict[str, Event],
 ) -> str:
     """Returns the satisfaction percentage.
 
@@ -35,7 +36,8 @@ def get_satisfaction_percentage(
 
 
 def get_general_satisfaction_percentage(
-    people: list[Person], event_map: dict[str, Event]
+    people: list[Person],
+    event_map: dict[str, Event],
 ) -> str:
     """Returns the general satisfaction percentage.
 

@@ -18,7 +18,11 @@ class Person:
     """A class wrapping a person's information."""
 
     def __init__(
-        self, name: str, email: str, choices: list[str], top_choice: str
+        self,
+        name: str,
+        email: str,
+        choices: list[str],
+        top_choice: str,
     ) -> None:
         """Instantiates the person class.
 
