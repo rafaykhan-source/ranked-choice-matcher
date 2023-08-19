@@ -22,7 +22,7 @@ development = [
 ]
 
 [tool.ruff]
-include = ["**.py", "*.pyi", "**/pyproject.toml", "datapipelines/*.ipynb"]
+include = ["**.py", "**/pyproject.toml", "datapipelines/*.ipynb"]
 line-length = 88
 select = [
     "A", # flake8-builtins
