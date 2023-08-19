@@ -40,7 +40,7 @@ class Person:
         Returns:
             str: Person's information.
         """
-        return f"""Name: {self.name}; ID: {self.id}; 
+        return f"""Name: {self.name}; ID: {self.id};
 Choices: {self.choices}; Top Choice: {self.top_choice}"""
 
 
