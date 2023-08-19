@@ -26,6 +26,7 @@ include = ["**.py", "*.pyi", "**/pyproject.toml", "datapipelines/*.ipynb"]
 line-length = 88
 select = [
     "A", # flake8-builtins
+    "C90", # mccabe
     "E",  # pycodestyle
     "W", # pycodestyle
     "F",  # pyflakes
