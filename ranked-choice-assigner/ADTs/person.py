@@ -1,16 +1,18 @@
 """This module contains the Person Abstract Datatype (ADT).
 
-Provided a Person's information from a spreadsheet, this class
-functions primarily as a wrapper of one's information, their
-ranked choices and supports operations.
+This class wraps typical spreadsheet information
+associated with a person for the ranked-choice assignment
+task.
 
 Typical usage example:
 
-person = Person(name="John Doe",
-                email="jd0000@123mail.com",
-                choices=["choice1", "choice2", "choice3"],
-                top_choice="choice1",
-                )
+person = Person(
+    name="John Doe",
+    email="jd0000@123mail.com",
+    choices=["choice_1", "choice_2", "choice_3"],
+    top_choice="choice_1",
+)
+
 """
 
 
