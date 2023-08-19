@@ -72,7 +72,7 @@ def write_results(csv_name: str, event_map: dict[str, Event]) -> None:
     results = {}
     for event_name, event in event_map.items():
         roster = event.get_roster()
-        people = [f"{person.name};{person.id}" for person in roster]
+        people = [f"{person.name};{person.email}" for person in roster]
         results[event_name] = people
     df = pd.DataFrame.from_dict(results, orient="index")
     df.to_csv(f"ranked-choice-assigner/results/{csv_name}_assignments.csv")

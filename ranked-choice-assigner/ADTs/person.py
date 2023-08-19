@@ -7,27 +7,31 @@ ranked choices and supports operations.
 Typical usage example:
 
 person = Person(name="John Doe",
-                id="jd0000",
-                choices=["choice1", "choice2", "choice3"])
+                email="jd0000@123mail.com",
+                choices=["choice1", "choice2", "choice3"],
+                top_choice="choice1",
+                )
 """
 
 
 class Person:
     """A class wrapping a person's information."""
 
-    def __init__(self, name: str, id: str, choices: list[str], top_choice: str) -> None:
+    def __init__(
+        self, name: str, email: str, choices: list[str], top_choice: str
+    ) -> None:
         """Instantiates the person class.
 
         Args:
             name (str): Person's name.
-            id (str): Person's unique id.
+            email (str): Person's unique email.
             choices (list[str]): Person's event choices.
             top_choice (str): Person's top event choice.
         """
         self.name: str = name
         "The person's name."
-        self.id: int = id
-        "The person's unique identifier."
+        self.email: int = email
+        "The person's unique identifier/email."
         self.choices: list[str] = choices
         "The person's event choices' names."
         self.top_choice: str = top_choice
@@ -40,7 +44,7 @@ class Person:
         Returns:
             str: Person's information.
         """
-        return f"""Name: {self.name}; ID: {self.id};
+        return f"""Name: {self.name}; ID: {self.email};
 Choices: {self.choices}; Top Choice: {self.top_choice}"""
 
 
@@ -48,7 +52,7 @@ def main() -> None:
     """Unit Testing."""
     person = Person(
         name="John Doe",
-        id="jd0000",
+        email="jd0000",
         choices=["Gathering 1", "Gathering 2"],
         top_choice="Gathering 1",
     )
