@@ -1,7 +1,7 @@
 """This module represents the data producer for the project."""
 
-from ADTs import Event, Person
 import pandas as pd
+from ADTs import Event, Person
 
 
 def get_event_map(group_type: str) -> dict[str, Event]:
@@ -15,7 +15,7 @@ def get_event_map(group_type: str) -> dict[str, Event]:
     else:
         data = __load_data("community_events.csv")
     events = list(map(__create_event, data.values.tolist()))
-    
+
     event_map = {}
     for event in events:
         event_map[event.name] = event
