@@ -2,7 +2,7 @@
 .vscode
 data
 build
-datapipelines/
-ranked-choice-assigner/processed-data
+ranked-choice-assigner/datapipelines/
+processed-data
 ranked-choice-assigner/results
 *.egg-info
