@@ -4,5 +4,5 @@ data
 build
 ranked-choice-assigner/datapipelines/
 processed-data
-ranked-choice-assigner/results
+results
 *.egg-info
