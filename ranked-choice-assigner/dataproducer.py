@@ -37,7 +37,7 @@ def __load_data(csv_name: str) -> pd.DataFrame:
     Returns:
         pd.DataFrame: data
     """
-    return pd.read_csv(f"ranked-choice-assigner/processed-data/{csv_name}")
+    return pd.read_csv(f"processed-data/{csv_name}")
 
 
 def __create_event(row: list) -> Event:
