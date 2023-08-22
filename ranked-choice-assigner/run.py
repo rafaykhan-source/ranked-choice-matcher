@@ -11,6 +11,8 @@ def main() -> None:
     people = dp.get_people("wellness")
 
     for person in people:
+        if "Dance" in person.top_choice:
+            continue
         # Try to place person in their top choice
         if person.top_choice not in event_map:
             print(f"Error: Person's top choice not in event map - {person.top_choice}")
