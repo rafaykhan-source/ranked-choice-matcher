@@ -21,10 +21,10 @@ def main() -> None:
         top_choice_event = event_map[person.top_choice]
         if not top_choice_event.is_full():
             top_choice_event.add_person(person)
+            person.is_placed = True
             continue
 
         # Try to place person in one of their preferred choices
-        placed = False
         choices = person.choices
         for choice in choices:
             if choice not in event_map:
@@ -34,16 +34,17 @@ def main() -> None:
             choice_event = event_map[choice]
             if not choice_event.is_full():
                 choice_event.add_person(person)
-                placed = True
+                person.is_placed = True
                 break
 
-        if placed:
+        if person.is_placed:
             continue
 
         # Place person in one of the available options
         for option_event in options:
             if not option_event.is_full():
                 option_event.add_person(person)
+                person.is_placed = True
                 break
 
     # Print resulting assignments
