@@ -35,13 +35,15 @@ class Person:
             top_choice (str): Person's top event choice.
         """
         self.name: str = name
-        "The person's name."
+        "The person's name. Instance Variable."
         self.email: int = email
-        "The person's unique identifier/email."
+        "The person's unique identifier/email. Instance Variable."
         self.choices: list[str] = choices
-        "The person's event choices' names."
+        "The person's event choices' names. Instance Variable."
         self.top_choice: str = top_choice
-        "The person's top_choice event name."
+        "The person's top_choice event name. Instance Variable."
+        self.is_placed: bool = False
+        "Whether the person has a placement. Instance Variable."
         return
 
     def __str__(self) -> str:
