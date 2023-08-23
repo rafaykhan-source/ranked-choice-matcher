@@ -64,6 +64,23 @@ def get_general_satisfaction_percentage(
     return f"General Satisfaction Rating: {((choice_count/len(people))*100):.2f}"
 
 
+def count_unplaced(people: list[Person]) -> int:
+    """Counts the number of unplaced individuals.
+
+    Args:
+        people (list[Person]): People placed into events.
+
+    Returns:
+        int: number of unplaced people.
+    """
+    count = 0
+    for person in people:
+        if not person.placement:
+            count += 1
+
+    return count
+
+
 def write_results(csv_name: str, event_map: dict[str, Event]) -> None:
     """Writes the resulting assignments to a csv file.
 
@@ -71,13 +88,13 @@ def write_results(csv_name: str, event_map: dict[str, Event]) -> None:
         csv_name (str): Name of csv.
         event_map (dict[str, Event]): Events
     """
-    results = {}
-    for event_name, event in event_map.items():
+    results = []
+    for event in event_map.values():
         roster = event.get_roster()
-        people = [f"{person.name};{person.email}" for person in roster]
-        results[event_name] = people
-    df = pd.DataFrame.from_dict(results, orient="index")
-    df.to_csv(f"results/{csv_name}_assignments.csv")
+        for person in roster:
+            results.append((person.name, person.email, person.placement))
+    df = pd.DataFrame(results, columns=["name", "email", "placement"])
+    df.to_csv(f"results/{csv_name}_assignments.csv", index=False)
     return
 
 
