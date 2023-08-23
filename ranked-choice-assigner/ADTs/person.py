@@ -25,6 +25,7 @@ class Person:
         email: str,
         choices: list[str],
         top_choice: str,
+        placement: str = "",
     ) -> None:
         """Instantiates the person class.
 
@@ -33,6 +34,7 @@ class Person:
             email (str): Person's unique email.
             choices (list[str]): Person's event choices.
             top_choice (str): Person's top event choice.
+            placement (str, optional): Person's placement (if known). Defaults to "".
         """
         self.name: str = name
         "The person's name. Instance Variable."
@@ -42,8 +44,8 @@ class Person:
         "The person's event choices' names. Instance Variable."
         self.top_choice: str = top_choice
         "The person's top_choice event name. Instance Variable."
-        self.is_placed: bool = False
-        "Whether the person has a placement. Instance Variable."
+        self.placement: str = placement
+        "The person's placed event name. Instance Variable."
         return
 
     def __str__(self) -> str:
