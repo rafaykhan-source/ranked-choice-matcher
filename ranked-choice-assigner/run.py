@@ -10,40 +10,50 @@ def main() -> None:
     options = list(event_map.values())  # all the events
     people = dp.get_people("wellness")
 
+    # Try top choice placement
     for person in people:
+        if person.placement:
+            continue
+
         if "Dance" in person.top_choice:
             continue
-        # Try to place person in their top choice
+
         if person.top_choice not in event_map:
             print(f"Error: Person's top choice not in event map - {person.top_choice}")
-            break
+            continue
 
         top_choice_event = event_map[person.top_choice]
         if not top_choice_event.is_full():
             top_choice_event.add_person(person)
+            person.placement = top_choice_event.name
             continue
 
-        # Try to place person in one of their preferred choices
-        placed = False
+    # Try preferred choices placement
+    for person in people:
+        if person.placement:
+            continue
+
         choices = person.choices
         for choice in choices:
             if choice not in event_map:
                 print(f"Error: Person's choice not in event map - {choice}")
-                break
+                continue
 
             choice_event = event_map[choice]
             if not choice_event.is_full():
                 choice_event.add_person(person)
-                placed = True
+                person.placement = choice_event.name
                 break
 
-        if placed:
+    # Try placement remaining possible options
+    for person in people:
+        if person.placement:
             continue
 
-        # Place person in one of the available options
         for option_event in options:
             if not option_event.is_full():
                 option_event.add_person(person)
+                person.placement = option_event.name
                 break
 
     # Print resulting assignments
@@ -54,9 +64,10 @@ def main() -> None:
         print(f"{option_event.name}: {names}")
         print("------------------------")
 
-    print(metrics.get_high_satisfaction_percentage(people, event_map))
-    print(metrics.get_general_satisfaction_percentage(people, event_map))
+    # print(metrics.get_high_satisfaction_percentage(people, event_map))
+    # print(metrics.get_general_satisfaction_percentage(people, event_map))
     metrics.write_results("wellness", event_map)
+    print(metrics.count_unplaced(people))
     return
 
 
