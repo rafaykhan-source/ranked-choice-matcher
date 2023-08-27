@@ -10,7 +10,7 @@ maintainers = [{ name = "Rafay Khan" }]
 description = "An algorithm/automation program for assigning people to (simultaneous) events based on ranked preferences."
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["pyyaml"]
+dependencies = ["pyyaml", "pandas"]
 
 [project.optional-dependencies]
 development = ["black", "ruff", "pytype"]
@@ -38,7 +38,7 @@ select = [
     "I",   # isort
     "N",   # pep8-naming
 ]
-
+include = ["*.py", "*.ipynb", "**/pyproject.toml"]
 ignore = ["ANN101", "COM819"]
 
 [tool.ruff.pydocstyle]
