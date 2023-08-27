@@ -6,7 +6,7 @@ custom ADTs.
 """
 
 import pandas as pd
-from ADTs import Event, Person
+from adt import Event, Person
 
 
 def get_event_map(group_type: str) -> dict[str, Event]:

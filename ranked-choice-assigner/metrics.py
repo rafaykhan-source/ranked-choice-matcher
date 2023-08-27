@@ -5,7 +5,7 @@ satisfaction percentage.
 """
 
 import pandas as pd
-from ADTs import Event, Person
+from adt import Event, Person
 
 
 def get_high_satisfaction_percentage(

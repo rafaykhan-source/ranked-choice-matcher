@@ -3,5 +3,5 @@
 It contains the Person Module and Event Module, for representing
 available events and people to be place on those event rosters.
 """
-from ADTs.event import Event
-from ADTs.person import Person
+from adt.event import Event
+from adt.person import Person

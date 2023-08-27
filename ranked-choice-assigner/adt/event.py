@@ -12,7 +12,7 @@ if not event.is_full():
 
 from copy import deepcopy
 
-from ADTs.person import Person
+from adt.person import Person
 
 
 class Event:
