@@ -2,7 +2,7 @@
 .vscode
 data
 build
-src/datapipelines
 processed-data
 results
 *.egg-info
+src/datapipelines
