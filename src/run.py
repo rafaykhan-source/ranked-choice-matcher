@@ -15,9 +15,6 @@ def main() -> None:
         if person.placement:
             continue
 
-        if "Dance" in person.top_choice:
-            continue
-
         if person.top_choice not in event_map:
             print(f"Error: Person's top choice not in event map - {person.top_choice}")
             continue
