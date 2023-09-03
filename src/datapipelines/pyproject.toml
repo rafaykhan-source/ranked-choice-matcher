@@ -28,7 +28,7 @@ select = [
     "ARG", # flake8-unused-arguments
 ]
 include = ["*.ipynb"]
-ignore = ["ANN101", "COM819", "D100", "F821"]
+ignore = ["ANN101", "COM819", "D100", "F821", "E501"]
 
 [tool.ruff.pydocstyle]
 convention = "google"
