@@ -5,4 +5,4 @@ build
 processed-data
 results
 *.egg-info
-src/datapipelines
+src/datapipelines/*.ipynb
