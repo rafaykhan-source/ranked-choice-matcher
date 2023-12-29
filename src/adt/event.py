@@ -94,7 +94,7 @@ class Event:
 
 def main() -> None:
     """Unit Testing."""
-    event = Event(name="Gathering 1", capacity="2")
+    event = Event(name="Gathering 1", capacity=2)
     print(event)
     return
 

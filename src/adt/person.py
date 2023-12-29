@@ -38,7 +38,7 @@ class Person:
         """
         self.name: str = name
         "The person's name. Instance Variable."
-        self.email: int = email
+        self.email: str = email
         "The person's unique identifier/email. Instance Variable."
         self.choices: list[str] = choices
         "The person's event choices' names. Instance Variable."
