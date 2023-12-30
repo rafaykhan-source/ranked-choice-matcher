@@ -11,10 +11,12 @@ if not event.is_full():
 """
 
 from copy import deepcopy
+from dataclasses import dataclass, field
 
 from adt.person import Person
 
 
+@dataclass(slots=True)
 class Event:
     """A class wrapping an event's information and containing event-related operations.
 
@@ -23,20 +25,12 @@ class Event:
         capacity (int): The event's size limit.
     """
 
-    def __init__(self, name: str, capacity: int) -> None:
-        """Instantiates an event.
-
-        Args:
-            name (str): Name of the event.
-            capacity (int): Event's size limit.
-        """
-        self.name: str = name
-        "The event's name."
-        self.capacity: int = capacity
-        "The occupancy limit for the event."
-        self.__roster: list[Person] = []
-        "The current event roster."
-        return
+    name: str
+    "The event's name."
+    capacity: int
+    "The occupancy limit for the event."
+    __roster: list[Person] = field(default_factory=list)
+    "The current event roster."
 
     def add_person(self, person: Person) -> bool:
         """Adds a person to the event roster.
@@ -89,7 +83,9 @@ class Event:
         Returns:
             str: Event's information.
         """
-        return f"Name: {self.name}; Capacity: {self.capacity}; Roster: {self.__roster}"
+        return f"""Name: {self.name}
+Capacity: {self.capacity}
+Roster: {self.__roster}"""
 
 
 def main() -> None:
