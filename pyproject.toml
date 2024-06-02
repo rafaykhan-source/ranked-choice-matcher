@@ -16,13 +16,11 @@ requires-python = ">=3.10"
 dependencies = ["pyyaml", "pandas"]
 
 [project.optional-dependencies]
-development = ["black", "ruff", "mypy", "pre-commit"]
+development = ["ruff", "mypy", "pre-commit"]
 
 [tool.ruff]
 # Ruff detects ignored python notebooks
 respect-gitignore = false
-# Adjust line-length to match black formatter
-line-length = 88
 select = [
     "F",   # pyflakes
     "E",   # pycodestyle
