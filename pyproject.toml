@@ -2,6 +2,9 @@
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
+[tool.distutils.egg_info]
+egg_base = "build"
+
 [project]
 name = "ranked_choice_assigner"
 version = "0.0.11"
