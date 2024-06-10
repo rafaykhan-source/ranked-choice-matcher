@@ -4,11 +4,11 @@ import dataproducer as dp
 import metrics
 
 
-def main() -> None:
+def main() -> None:  # noqa: C901
     """Runs the assignment script."""
-    event_map = dp.get_event_map("wellness")
+    event_map = dp.get_event_map("instructors")
     options = list(event_map.values())  # all the events
-    people = dp.get_people("wellness")
+    people = dp.get_people("instructors")
 
     # Try top choice placement
     for person in people:
@@ -61,10 +61,11 @@ def main() -> None:
         print(f"{option_event.name}: {names}")
         print("------------------------")
 
-    # print(metrics.get_high_satisfaction_percentage(people, event_map))
-    # print(metrics.get_general_satisfaction_percentage(people, event_map))
-    metrics.write_results("wellness", event_map)
+    print(metrics.get_high_satisfaction_percentage(people, event_map))
+    print(metrics.get_general_satisfaction_percentage(people, event_map))
+    metrics.write_results("instructors", event_map)
     print(metrics.count_unplaced(people))
+    print(metrics.collect_unhappy(people))
     return
 
 
