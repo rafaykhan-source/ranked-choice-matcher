@@ -53,16 +53,16 @@ def __create_person(row: list) -> Person:
     )
 
 
-def get_people(group_type: str) -> list[Person]:
+def get_people(group: str) -> list[Person]:
     """Returns a list of Person objects.
 
+    Args:
+        group (str): The desired group of people.
+
     Returns:
-        list[Person]: people in group
+        list[Person]: The people in the group.
     """
-    if group_type == "wellness":
-        data = __load_data("wellness.csv")
-    else:
-        data = __load_data("community.csv")
+    data = __load_data(group)
 
     return list(map(__create_person, data.values.tolist()))
 
