@@ -4,6 +4,7 @@ import dataproducer as dp
 import metrics
 
 
+# TODO: Use argparse module and remove magic words
 def main() -> None:  # noqa: C901
     """Runs the assignment script."""
     event_map = dp.get_event_map("instructors")
