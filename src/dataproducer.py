@@ -21,16 +21,20 @@ def get_event_map(group: str) -> dict[str, Event]:
     return {event.name: event for event in events}
 
 
-def __load_data(csv_name: str) -> pd.DataFrame:
+def __load_data(csv_name: str, datatype: str = "") -> pd.DataFrame:
     """Loads data from csv with specified name.
 
     Args:
-        csv_name (str): Name of the csv for data retrieval.
+        csv_name (str): The csv name for data retrieval.
+        datatype: The type of data.
 
     Returns:
-        pd.DataFrame: data
+        pd.DataFrame: The requested data.
     """
-    return pd.read_csv(f"processed-data/{csv_name}")
+    if datatype == "events":
+        return pd.read_csv(f"events/{csv_name}.csv")
+
+    return pd.read_csv(f"processed-data/{csv_name}.csv")
 
 
 def __create_event(row: list) -> Event:
