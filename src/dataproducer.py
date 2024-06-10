@@ -47,7 +47,7 @@ def __create_event(row: list) -> Event:
 def __create_person(row: list) -> Person:
     return Person(
         name=row[1],
-        email=row[0].strip(),
+        email=row[0],
         choices=row[2].split(","),
         top_choice=row[3],
     )
