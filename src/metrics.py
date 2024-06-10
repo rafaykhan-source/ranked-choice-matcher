@@ -81,6 +81,18 @@ def count_unplaced(people: list[Person]) -> int:
     return count
 
 
+def collect_unhappy(people: list[Person]) -> int:
+    """Counts the number of unplaced individuals.
+
+    Args:
+        people (list[Person]): People placed into events.
+
+    Returns:
+        int: number of unplaced people.
+    """
+    return [person for person in people if person.placement not in person.choices]
+
+
 def write_results(csv_name: str, event_map: dict[str, Event]) -> None:
     """Writes the resulting assignments to a csv file.
 
