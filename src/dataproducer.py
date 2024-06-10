@@ -9,23 +9,16 @@ import pandas as pd
 from adt import Event, Person
 
 
-def get_event_map(group_type: str) -> dict[str, Event]:
+def get_event_map(group: str) -> dict[str, Event]:
     """Returns a mapping of event name strings to event objects.
 
     Returns:
-        dict[str, Event]: event map
+        dict[str, Event]: The event map.
     """
-    if group_type == "wellness":
-        data = __load_data("wellness_events.csv")
-    else:
-        data = __load_data("community_events.csv")
+    data = __load_data(group, "events")
     events = list(map(__create_event, data.values.tolist()))
 
-    event_map = {}
-    for event in events:
-        event_map[event.name] = event
-
-    return event_map
+    return {event.name: event for event in events}
 
 
 def __load_data(csv_name: str) -> pd.DataFrame:
