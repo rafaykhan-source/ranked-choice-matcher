@@ -5,7 +5,6 @@ satisfaction percentage.
 """
 
 import pandas as pd
-
 from adt import Event, Person
 
 
