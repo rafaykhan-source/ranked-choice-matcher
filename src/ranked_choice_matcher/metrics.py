@@ -4,7 +4,7 @@ The module's metric include high satisfaction percentage and general
 satisfaction percentage.
 """
 
-from adt import Event, Person
+from models import Event, Person
 
 
 def get_high_satisfaction_percentage(

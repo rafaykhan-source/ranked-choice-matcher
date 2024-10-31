@@ -108,5 +108,4 @@ def main() -> None:  # noqa
     print("\n".join([str(p) for p in metrics.collect_unhappy(people)]))
 
 
-if __name__ == "__main__":
-    main()
+main()

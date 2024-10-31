@@ -8,7 +8,7 @@ import csv
 import random
 from dataclasses import dataclass
 
-from adt import Event, Person
+from models import Event, Person
 
 
 @dataclass

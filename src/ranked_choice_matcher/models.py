@@ -1,19 +1,18 @@
-"""This module represents the Event Abstract Datatype (ADT).
-
-This class wraps the information and supports operations
-associated with a real-life event.
-
-Typical usage example:
-
-event = Event(name="Community Gathering", capacity=15)
-if not event.is_full():
-    event.add_person(person)
-"""
+"""This module contains the models for the program."""
 
 from copy import deepcopy
 from dataclasses import dataclass, field
 
-from adt.person import Person
+
+@dataclass(slots=True)
+class Person:
+    """Wraps the information associated with a person."""
+
+    name: str
+    email: str
+    choices: list[str]
+    top_choice: str
+    placement: str = ""
 
 
 @dataclass(slots=True)
@@ -26,10 +25,9 @@ class Event:
     """
 
     name: str
-    "The event's name."
     capacity: int
     "The occupancy limit for the event."
-    __roster: list[Person] = field(default_factory=list)
+    roster: list[Person] = field(default_factory=list)
     "The current event roster."
 
     def add_person(self, person: Person) -> bool:
@@ -45,7 +43,7 @@ class Event:
             print("Error: Person cannot be added to event with full roster.")
             return False
 
-        self.__roster.append(person)
+        self.roster.append(person)
 
         return True
 
@@ -55,11 +53,11 @@ class Event:
         Returns:
             bool: Whether the event is full.
         """
-        if len(self.__roster) > self.capacity:
+        if len(self.roster) > self.capacity:
             print("Error: Event capacity has been exceed.")
             return True
 
-        return len(self.__roster) == self.capacity
+        return len(self.roster) == self.capacity
 
     def get_roster(self) -> list[Person]:
         """Returns a shallow copy of the event roster.
@@ -67,7 +65,7 @@ class Event:
         Returns:
             list[Person]: The event's roster.
         """
-        return self.__roster.copy()
+        return self.roster.copy()
 
     def get_roster_deep(self) -> list[Person]:
         """Returns a deep copy of the event roster.
@@ -75,7 +73,7 @@ class Event:
         Returns:
             list[Person]: The event's roster.
         """
-        return deepcopy(self.__roster)
+        return deepcopy(self.roster)
 
     def __str__(self) -> str:
         """Returns string representation of the event.
@@ -85,14 +83,8 @@ class Event:
         """
         return f"""Name: {self.name}
 Capacity: {self.capacity}
-Roster: {self.__roster}"""
-
-
-def main() -> None:
-    """Unit Testing."""
-    event = Event(name="Gathering 1", capacity=2)
-    print(event)
+Roster: {self.roster}"""
 
 
 if __name__ == "__main__":
-    main()
+    pass

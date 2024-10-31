@@ -3,7 +3,7 @@
 import csv
 from dataclasses import dataclass
 
-from adt import Person
+from models import Person
 
 
 @dataclass
