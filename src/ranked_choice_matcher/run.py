@@ -2,8 +2,8 @@
 
 import argparse
 
-import dataproducer as dp
 import metrics
+from dataserver import DataServer
 
 
 def get_parsed_arguments() -> argparse.Namespace:
@@ -27,9 +27,11 @@ def get_parsed_arguments() -> argparse.Namespace:
 def main() -> None:  # noqa
     """Runs the matching script."""
     args = get_parsed_arguments()
-    event_map = dp.get_event_map(args.GROUP)
+    d = DataServer()
+    event_map = d.get_events(f"data/events/{args.GROUP}.csv")
+    print(event_map)
     options = list(event_map.values())
-    people = dp.get_people(args.GROUP)
+    people = d.get_people(f"data/groups/{args.GROUP}.csv")
 
     # Pre-Determined Placements
     for person in people:
