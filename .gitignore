@@ -5,3 +5,4 @@ processed-data
 results
 events
 *.lock
+*.egg-info
