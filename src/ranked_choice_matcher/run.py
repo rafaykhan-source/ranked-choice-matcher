@@ -4,6 +4,7 @@ import argparse
 
 import metrics
 from dataserver import DataServer
+from datawriter import DataWriter
 
 
 def get_parsed_arguments() -> argparse.Namespace:
@@ -101,7 +102,8 @@ def main() -> None:  # noqa
 
     print(metrics.get_high_satisfaction_percentage(people, event_map))
     print(metrics.get_general_satisfaction_percentage(people, event_map))
-    metrics.write_results(args.GROUP, event_map)
+    r = DataWriter()
+    r.write_results(f"results/{args.GROUP}.csv", people)
     print(metrics.count_unplaced(people))
     print("\n".join([str(p) for p in metrics.collect_unhappy(people)]))
 

@@ -4,7 +4,6 @@ The module's metric include high satisfaction percentage and general
 satisfaction percentage.
 """
 
-import pandas as pd
 from adt import Event, Person
 
 
@@ -91,23 +90,6 @@ def collect_unhappy(people: list[Person]) -> list[Person]:
         list[Person]: The unhappy people.
     """
     return [person for person in people if person.placement not in person.choices]
-
-
-def write_results(csv_name: str, event_map: dict[str, Event]) -> None:
-    """Writes the resulting assignments to a csv file.
-
-    Args:
-        csv_name (str): Name of csv.
-        event_map (dict[str, Event]): Events
-    """
-    results = []
-    for event in event_map.values():
-        roster = event.get_roster()
-        results.extend(
-            [(person.name, person.email, person.placement) for person in roster],
-        )
-    df = pd.DataFrame(results, columns=["name", "email", "placement"])
-    df.to_csv(f"results/{csv_name}_assignments.csv", index=False)
 
 
 def main() -> None:
