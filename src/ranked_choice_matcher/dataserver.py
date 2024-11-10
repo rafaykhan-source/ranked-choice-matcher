@@ -8,7 +8,7 @@ import csv
 import random
 from dataclasses import dataclass
 
-from models import Event, Person
+from ranked_choice_matcher.models import Event, Person
 
 
 @dataclass

@@ -4,7 +4,7 @@ The module's metric include high satisfaction percentage and general
 satisfaction percentage.
 """
 
-from models import Event, Person
+from ranked_choice_matcher.models import Event, Person
 
 
 def get_high_satisfaction_percentage(

@@ -1,5 +1,5 @@
 """This represents the ranked choice matcher package."""
 
-from .models import Event, Person
+from ranked_choice_matcher.models import Event, Person
 
 __all__ = ["Event", "Person"]

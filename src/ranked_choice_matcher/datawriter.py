@@ -3,7 +3,7 @@
 import csv
 from dataclasses import dataclass
 
-from models import Person
+from ranked_choice_matcher.models import Person
 
 
 @dataclass

@@ -3,8 +3,9 @@
 import argparse
 
 import metrics
-from dataserver import DataServer
-from datawriter import DataWriter
+
+from ranked_choice_matcher.dataserver import DataServer
+from ranked_choice_matcher.datawriter import DataWriter
 
 
 def get_parsed_arguments() -> argparse.Namespace:
