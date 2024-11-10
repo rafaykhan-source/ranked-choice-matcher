@@ -6,6 +6,7 @@ import metrics
 
 from ranked_choice_matcher.dataserver import DataServer
 from ranked_choice_matcher.datawriter import DataWriter
+from ranked_choice_matcher.strategies import NaiveTopChoiceStrategy
 
 
 def get_parsed_arguments() -> argparse.Namespace:
@@ -26,7 +27,7 @@ def get_parsed_arguments() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def main() -> None:  # noqa
+def main() -> None:
     """Runs the matching script."""
     args = get_parsed_arguments()
     d = DataServer()
@@ -35,65 +36,7 @@ def main() -> None:  # noqa
     options = list(event_map.values())
     people = d.get_people(f"data/groups/{args.GROUP}.csv")
 
-    # Pre-Determined Placements
-    for person in people:
-        if not person.placement:
-            continue
-
-        if person.placement not in event_map:
-            print(
-                f"Error: Person's pre-determined placement not in event map - {person.placement}"  # noqa
-            )
-            continue
-
-        placement_event = event_map[person.placement]
-        if not placement_event.is_full():
-            placement_event.add_person(person)
-            person.placement = placement_event.name
-            continue
-
-    # Top-Choice Placements
-    for person in people:
-        if person.placement:
-            continue
-
-        if person.top_choice not in event_map:
-            print(f"Error: Person's top choice not in event map - {person.top_choice}")
-            continue
-
-        top_choice_event = event_map[person.top_choice]
-        if not top_choice_event.is_full():
-            top_choice_event.add_person(person)
-            person.placement = top_choice_event.name
-            continue
-
-    # Preferred Choice Placements
-    for person in people:
-        if person.placement:
-            continue
-
-        choices = person.choices
-        for choice in choices:
-            if choice not in event_map:
-                print(f"Error: Person's choice not in event map - {choice}")
-                continue
-
-            choice_event = event_map[choice]
-            if not choice_event.is_full():
-                choice_event.add_person(person)
-                person.placement = choice_event.name
-                break
-
-    # Remaining Placements
-    for person in people:
-        if person.placement:
-            continue
-
-        for option_event in options:
-            if not option_event.is_full():
-                option_event.add_person(person)
-                person.placement = option_event.name
-                break
+    NaiveTopChoiceStrategy().set_placements(people, event_map)
 
     # Show Events
     for option_event in options:
