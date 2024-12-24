@@ -9,7 +9,8 @@ dependencies = [
 ]
 
 [tool.uv]
-dev-dependencies = [
+[project.optional-dependencies]
+test = [
     "pytest>=8.3.3",
 ]
 
@@ -48,7 +49,9 @@ select = [
     "PERF", # Perflint
     "RUF",  # Ruff-specific rules
 ]
-ignore = ["ANN101", "E501", "PLR0912"]
+exclude = ["noxfile.py"]
+
+ignore = ["ANN101", "E501", "PLR0912", "COM812", "ISC001"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
