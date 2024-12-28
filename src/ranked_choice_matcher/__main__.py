@@ -6,6 +6,7 @@ from ranked_choice_matcher import metrics
 from ranked_choice_matcher.dataserver import DataServer
 from ranked_choice_matcher.datawriter import DataWriter
 from ranked_choice_matcher.strategies import NaiveTopChoiceStrategy
+from ranked_choice_matcher.utility import validate_options
 
 
 def get_args() -> argparse.Namespace:
@@ -34,6 +35,7 @@ def main() -> None:
     event_map = d.get_events(f"data/events/{args.GROUP}.csv")
     options = list(event_map.values())
     people = d.get_people(f"data/groups/{args.GROUP}.csv")
+    validate_options(people, event_map)
 
     NaiveTopChoiceStrategy().set_placements(people, event_map)
 
