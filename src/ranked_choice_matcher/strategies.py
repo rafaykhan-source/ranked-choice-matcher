@@ -31,12 +31,6 @@ class NaiveTopChoiceStrategy(PlacementStrategy):
             if not person.placement:
                 continue
 
-            if person.placement not in event_map:
-                print(
-                    f"Error: Person's pre-determined placement not in event map - {person.placement}",
-                )
-                continue
-
             placement_event = event_map[person.placement]
             if not placement_event.is_full():
                 placement_event.add_person(person)
@@ -45,15 +39,6 @@ class NaiveTopChoiceStrategy(PlacementStrategy):
 
         # Top-Choice Placements
         for person in people:
-            if person.placement:
-                continue
-
-            if person.top_choice not in event_map:
-                print(
-                    f"Error: Person's top choice not in event map - {person.top_choice}",
-                )
-                continue
-
             top_choice_event = event_map[person.top_choice]
             if not top_choice_event.is_full():
                 top_choice_event.add_person(person)
@@ -62,15 +47,7 @@ class NaiveTopChoiceStrategy(PlacementStrategy):
 
         # Preferred Choice Placements
         for person in people:
-            if person.placement:
-                continue
-
-            choices = person.choices
-            for choice in choices:
-                if choice not in event_map:
-                    print(f"Error: Person's choice not in event map - {choice}")
-                    continue
-
+            for choice in person.choices:
                 choice_event = event_map[choice]
                 if not choice_event.is_full():
                     choice_event.add_person(person)

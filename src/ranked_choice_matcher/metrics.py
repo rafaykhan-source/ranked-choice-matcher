@@ -92,9 +92,17 @@ def collect_unhappy(people: list[Person]) -> list[Person]:
     return [person for person in people if person.placement not in person.choices]
 
 
-def main() -> None:
-    """Unit Testing."""
+def show_placements(events: list[Event]) -> None:
+    """Shows the placements.
+
+    Args:
+        events (list[Event]): The events to show placements for.
+    """
+    for e in events:
+        names = [person.name for person in e.get_roster()]
+        print(f"{e.name}: {names}")
+        print("------------------------")
 
 
 if __name__ == "__main__":
-    main()
+    pass
