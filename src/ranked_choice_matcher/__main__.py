@@ -42,8 +42,8 @@ def main() -> None:
     metrics.show_placements(options)
     print(metrics.get_high_satisfaction_percentage(people, event_map))
     print(metrics.get_general_satisfaction_percentage(people, event_map))
-    print(metrics.count_unplaced(people))
-    print("\n".join([str(p) for p in metrics.collect_unhappy(people)]))
+    print(f"People Not Placed: {metrics.count_unplaced(people)}")
+    print(f"Unhappy: {'\n'.join([str(p) for p in metrics.collect_unhappy(people)])}")
 
     r = DataWriter()
     r.write_results(f"results/{args.GROUP}.csv", people)
