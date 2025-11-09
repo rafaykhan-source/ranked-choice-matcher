@@ -8,11 +8,14 @@ dependencies = [
     "pyyaml>=6.0.2",
 ]
 
-[tool.uv]
 [project.optional-dependencies]
 test = [
     "pytest>=8.3.3",
 ]
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"
 
 [tool.ruff.lint]
 select = [
