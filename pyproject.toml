@@ -4,14 +4,6 @@ version = "0.2.0"
 description = "An algorithm/automation program for matching people to events based on their ranked preferences."
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "pyyaml>=6.0.2",
-]
-
-[project.optional-dependencies]
-test = [
-    "pytest>=8.3.3",
-]
 
 [build-system]
 requires = ["uv_build"]
@@ -52,9 +44,11 @@ select = [
     "PERF", # Perflint
     "RUF",  # Ruff-specific rules
 ]
-exclude = ["noxfile.py"]
 
 ignore = ["ANN101", "E501", "PLR0912", "COM812", "ISC001"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
+[tool.rumdl.MD013]
+reflow = true

@@ -1,35 +1,30 @@
-# ranked-choice-matcher
-Matches people to events based on their ranked preferences.
+# Ranked Choice Matcher
 
-## Configuration:
+An algorithm/automation program for matching people to events based on their
+ranked preferences.
 
-### Development Setup
+## Development Setup
 
-In the `ranked-choice-matcher` directory, run:
 ```bash
-mkdir build data results events
+mkdir data results
 ```
 
-To setup the virtual environment, run:
+Code Quality:
+
 ```bash
-uv sync
-pre-commit install
+prek install
 ```
 
-## Usage:
+## Usage
 
 Run the command below to see help menu / program usage.
+
 ```bash
-python src/run.py -h
+uv run -m ranked_choice_matcher -h
 ```
 
 Run matches for a specified group.
+
 ```bash
-python src/run.py instructors
+uv run -m ranked_choice_matcher wellness
 ```
-
-## Acknowledgements
-
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-[![Nox](https://img.shields.io/badge/%F0%9F%A6%8A-Nox-D85E00.svg)](https://github.com/wntrblm/nox)

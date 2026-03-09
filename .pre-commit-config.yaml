@@ -1,16 +1,18 @@
+---
 repos:
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.2
+    hooks:
+      - id: codespell
+        additional_dependencies: [tomli]
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    # Ruff version.
-    rev: v0.8.4
+    rev: v0.15.5
     hooks:
-      # Run the linter.
-      - id: ruff
-        args: [ --fix ]
-      # Run the formatter.
+      - id: ruff-check
+        args: [--fix]
       - id: ruff-format
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "v1.14.0"
+  - repo: https://github.com/rvben/rumdl-pre-commit
+    rev: v0.1.43
     hooks:
-      - id: mypy
-        files: src
-        args: [--strict ]
+      - id: rumdl
+      - id: rumdl-fmt
